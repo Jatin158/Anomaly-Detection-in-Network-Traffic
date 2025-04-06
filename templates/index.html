@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            width: 480px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 15px 0 5px;
+            text-align: left;
+        }
+        select, input[type="text"], .btn {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        select {
+            background: white;
+            color: #333;
+        }
+        input[type="text"] {
+            background: #f2f2f2;
+        }
+        .btn {
+            background: #ff5722;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e64a19;
+            transform: scale(1.03);
+        }
+        .btn:active {
+            transform: scale(0.97);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/predict" method="POST">
+            <h2>🛡️ Network Attack Prediction</h2>
+            <label for="model">🔍 Select the Model</label>
+            <select id="model" name="model">
+                <option value="Random Forest">Random Forest</option>
+                <option value="XGBoost">XGBoost</option>
+                <option value="LightGBM">LightGBM</option>
+                <option value="CatBoost">CatBoost</option>
+
+                
+            </select>
+
+            <label for="features">📊 Enter 30 Features (Comma-Separated)</label>
+            <input type="text" id="features" name="features" placeholder="Enter 30 comma-separated values">
+
+            <button class="btn" type="submit">🚀 Predict Attack</button>
+        </form>
+    </div>
+</body>
+</html>
