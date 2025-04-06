@@ -15,7 +15,7 @@ model_paths = {
     "Random Forest": "random_forest_mimic.pkl",
     "XGBoost": "xgboost_mimic.pkl",
     "LightGBM": "lightgbm_mimic.pkl",
-    "CatBoost": "catboost_mimic.h5"
+    "CatBoost": "catboost_mimic.pkl"
 }
 
 models = {}
