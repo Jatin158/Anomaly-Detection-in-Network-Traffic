@@ -117,10 +117,11 @@ def predict():
         return render_template("result.html", attack=f"❌ Error: {str(e)}")
 
 import os
-import uvicorn
+
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))  # Use PORT from environment
+    app.run(host="0.0.0.0", port=port)        # Bind to 0.0.0.0 for external access
+
 
 
